@@ -104,10 +104,8 @@ const UserDashboard = () => {
 
   return (
     <DashboardLayout className="" activeMenu="Dashboard">
-      {/* Logo */}
       <img src={assets.logo} alt="Logo" className="mx-auto h-14 my-2" />
 
-      {/* MOBILE LAYOUT */}
       <section
         className="block md:hidden max-w-xl mx-auto px-2 sm:px-6"
         aria-label="Mobile Dashboard"
@@ -120,14 +118,13 @@ const UserDashboard = () => {
           variants={fadeIn}
         >
           <h2 className="text-3xl font-semibold mb-1 text-green-500">
-            Hello, <span className="text-black">{user?.name || "Staff"}</span>
+            Hello staff, <span className="text-black">{user?.name || "Staff"}</span>
           </h2>
           <p className="text-gray-500 text-sm">
             {moment().format("dddd, Do MMM YYYY")}
           </p>
         </motion.div>
 
-        {/* Info Cards */}
         <motion.div
           className="grid grid-cols-1 gap-4 mb-8"
           custom={2}
@@ -164,7 +161,6 @@ const UserDashboard = () => {
           ))}
         </motion.div>
 
-        {/* Charts Accordion */}
         <motion.div
           className="mb-8 bg-white p-4 rounded-lg shadow"
           custom={3}
@@ -178,7 +174,6 @@ const UserDashboard = () => {
           <CustomBarChart data={barChartData} />
         </motion.div>
 
-        {/* Recent Tasks */}
         <motion.div
           custom={4}
           initial="hidden"
@@ -198,16 +193,12 @@ const UserDashboard = () => {
         </motion.div>
       </section>
 
-      {/* DESKTOP LAYOUT */}
       <motion.section
         className="hidden md:block max-w-6xl mx-auto px-6 py-8"
         initial="hidden"
         animate="visible"
         variants={fadeIn}
       >
-        {/* New Desktop Layout */}
-
-        {/* Example Greeting */}
         <motion.div
           className="mb-10 flex items-center justify-between"
           custom={1}
@@ -221,7 +212,6 @@ const UserDashboard = () => {
               {moment().format("dddd, Do MMM YYYY")}
             </p>
           </div>
-          {/* Maybe add some quick action buttons here */}
           <button
             onClick={handleSeeAll}
             className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
@@ -230,7 +220,6 @@ const UserDashboard = () => {
           </button>
         </motion.div>
 
-        {/* Info Cards in a grid */}
         <motion.div
           className="grid grid-cols-4 gap-6 mb-12"
           custom={2}
@@ -265,7 +254,6 @@ const UserDashboard = () => {
           ))}
         </motion.div>
 
-        {/* Charts side by side */}
         <motion.div className="flex gap-8 mb-12" custom={3} variants={fadeIn}>
           <div className="flex-1 bg-white p-6 rounded-lg shadow">
             <h3 className="font-semibold mb-4">Task Distribution</h3>
@@ -277,7 +265,6 @@ const UserDashboard = () => {
           </div>
         </motion.div>
 
-        {/* Recent Tasks Table */}
         <motion.div custom={4} variants={fadeIn}>
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-2xl font-semibold">Recent Tasks</h3>
